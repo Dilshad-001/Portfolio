@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for sections */
+        section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        #home {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+        }
+        #about {
+            background: #f4f6fb;
+        }
+        #skills {
+            background: #fff;
+        }
+        #contact {
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+        }
+        footer {
+            background: #181d23;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        /* Animation for home heading */
+        .home-animate {
+            opacity: 0;
+            transform: translateY(-40px);
+            transition: opacity 1s, transform 1s;
+        }
+        .home-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Adventure images styling */
+        .adventure-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.10);
+            border: 3px solid #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #222;
+        }
+        .adventure-img:hover {
+            transform: scale(1.07) rotate(-2deg);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.25), 0 3px 12px rgba(0,0,0,0.13);
+            border-color: #2575fc;
+        }
+        /* Section headings */
+        h2, .display-4 {
+            color: #2575fc;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        /* Button style */
+        .btn-outline-light {
+            border-color: #2575fc;
+            color: #fff;
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            border-radius: 30px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn-outline-light:hover {
+            background: #fff;
+            color: #2575fc;
+            border-color: #2575fc;
+        }
+        /* Card style for skills */
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(37,117,252,0.08);
+            transition: box-shadow 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 24px rgba(37,117,252,0.15);
+        }
+        /* Contact form custom styles */
+        .contact-form .form-control {
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .contact-form .form-control:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 0 0.2rem rgba(37,117,252,0.15);
+        }
+        .contact-form label {
+            color: #2575fc;
+            font-weight: 500;
+        }
+        .contact-form .btn-primary {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 12px rgba(37,117,252,0.10);
+        }
+        .contact-form .btn-primary:hover, .contact-form .btn-primary:focus {
+            background: #fff;
+            color: #2575fc;
+            box-shadow: 0 6px 24px rgba(37,117,252,0.18);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://img.icons8.com/ios-filled/40/ffffff/database.png" alt="DB Logo" width="32" height="32" class="me-2">
+                <span>DILSHAD</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home" class="py-5">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3 home-animate">Welcome!</h1>
+            <p class="lead">I'm <span style="font-weight:bold; color:#2575fc;">DILSHAD</span>, a passionate developer. Explore my portfolio below.</p>
+            <a href="#about" class="btn btn-outline-light mt-3">Learn More</a>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="adventure-img" alt="Adventure 1">
+                </div>
+                <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="adventure-img" alt="Adventure 2">
+                </div>
+                <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=400&q=80" class="adventure-img" alt="Adventure 3">
+                </div>
+                <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" class="adventure-img" alt="Adventure 4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center flex-md-row-reverse">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="IMG/IMG_20250329_131256_692.webp" class="rounded-circle img-fluid shadow" alt="Dilshad" style="width:180px; height:180px; object-fit:cover;">
+                </div>
+                <div class="col-md-8">
+                    <h2>About Me</h2>
+                    <p>
+                        Hello! My name is <strong>Dilshad</strong>. I am a passionate web developer focused on creating modern, responsive, and visually appealing websites. My journey in web development started with curiosity and has grown into a deep commitment to learning and building high-quality digital experiences.
+                    </p>
+                    <p>
+                        I enjoy working with HTML, CSS, JavaScript, and frameworks like Bootstrap. I love solving problems, exploring new technologies, and collaborating with others. Outside of coding, I am an adventure enthusiast and enjoy exploring new places and capturing moments through photography.
+                    </p>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><strong>Name:</strong> Dilshad</li>
+                        <li class="list-group-item"><strong>Profession:</strong> Web Developer & Designer</li>
+                        <li class="list-group-item"><strong>Location:</strong> Karachi, Pakistan</li>
+                        <li class="list-group-item"><strong>Email:</strong> dilshad786@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center">My Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <h5 class="mb-3" style="color:#2575fc;"><i class="bi bi-lightbulb"></i> Problem Solving</h5>
+                                <p>
+                                    I have a strong ability to analyze problems and find creative, efficient solutions. I enjoy tackling new challenges and continuously improving my skills.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <h5 class="mb-3" style="color:#2575fc;"><i class="bi bi-people"></i> Teamwork & Communication</h5>
+                                <p>
+                                    I work well in teams, communicate clearly, and value collaboration. I believe great results come from sharing ideas and supporting each other.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <h5 class="mb-3" style="color:#2575fc;"><i class="bi bi-gear"></i> Adaptability</h5>
+                                <p>
+                                    I am quick to learn new technologies and adapt to changing environments. I stay updated with industry trends and am always ready to embrace new tools.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                                <h5 class="mb-3" style="color:#2575fc;"><i class="bi bi-award"></i> Commitment</h5>
+                                <p>
+                                    I am dedicated to delivering high-quality work and meeting deadlines. My commitment to excellence drives me to go the extra mile in every project.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <span class="badge bg-gradient" style="background: linear-gradient(90deg,#2575fc,#6a11cb); font-size:1.1rem; padding:0.8em 2em; color:#fff;">
+                            Always learning, always growing!
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center" style="color:#fff;">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            &copy; 2025 Dilshad Khan. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll for navbar links
+        $(document).ready(function () {
+            // Home heading animation
+            setTimeout(function() {
+                $('.home-animate').addClass('visible');
+            }, 300);
+
+            $('.navbar-nav a').on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 70
+                    }, 800);
+                }
+            });
+            // Optional: highlight active nav link on scroll
+            $(window).on('scroll', function () {
+                var scrollPos = $(document).scrollTop() + 80;
+                $('.navbar-nav a').each(function () {
+                    var currLink = $(this);
+                    var refElement = $(currLink.attr("href"));
+                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        $('.navbar-nav a').removeClass("active");
+                        currLink.addClass("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
